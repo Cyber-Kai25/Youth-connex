@@ -29,11 +29,6 @@ export default function Home() {
                     Get Started
                   </Button>
                 </Link>
-                <Link href="/test-credentials">
-                  <Button size="lg" variant="outline" className="border-border">
-                    Try Demo
-                  </Button>
-                </Link>
               </div>
               <div className="grid grid-cols-3 gap-4 pt-4">
                 <div>
