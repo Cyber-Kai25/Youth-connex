@@ -170,7 +170,7 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
-            <p>© 2024 National Youth Employment Agency, Cameroon. All rights reserved.</p>
+            <p>© 2026 National Youth Employment Agency, Cameroon. All rights reserved.</p>
           </div>
         </div>
       </footer>

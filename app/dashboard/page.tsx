@@ -96,6 +96,39 @@ export default async function DashboardPage() {
           </div>
         </div>
 
+        {profile?.user_type === 'employer' && (
+          <div className="mb-10">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-2xl font-bold text-foreground font-heading">Employer Tools</h2>
+              <Link href="/dashboard/employer/opportunities/new">
+                <Button className="bg-primary hover:bg-primary/90">Create Opportunity</Button>
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="p-6 bg-card rounded-lg border border-border">
+                <h3 className="font-semibold text-foreground mb-2">Manage Opportunities</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  View and manage opportunities you&apos;ve created.
+                </p>
+                <Link href="/dashboard/employer/opportunities">
+                  <Button variant="outline" className="w-full">Go to Opportunities</Button>
+                </Link>
+              </div>
+
+              <div className="p-6 bg-card rounded-lg border border-border">
+                <h3 className="font-semibold text-foreground mb-2">Review Applications</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Review applications submitted to your opportunities.
+                </p>
+                <Link href="/dashboard/employer/applications">
+                  <Button variant="outline" className="w-full">Go to Applications</Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Recommended Opportunities */}
         <div>
           <div className="flex items-center justify-between mb-6">

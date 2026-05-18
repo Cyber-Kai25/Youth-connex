@@ -90,6 +90,12 @@ const cameroonRegions: Record<string, [number, number]> = {
   'West': [5.9631, 10.1591],
 }
 
+const CAMEROON_CENTER: [number, number] = [5.7, 12.7]
+const CAMEROON_BOUNDS: [[number, number], [number, number]] = [
+  [1.65, 8.45],
+  [13.1, 16.25],
+]
+
 export function OpportunityMap({
   opportunities,
   selectedCategory,
@@ -135,8 +141,12 @@ export function OpportunityMap({
     <div className="w-full h-full rounded-lg overflow-hidden shadow-lg border border-border">
       <MapContainer
         key={mapKey}
-        center={[3.8667, 11.5167]}
+        center={CAMEROON_CENTER}
         zoom={6}
+        minZoom={6}
+        maxZoom={14}
+        maxBounds={CAMEROON_BOUNDS}
+        maxBoundsViscosity={1.0}
         style={{ height: '600px', width: '100%' }}
         className="z-0"
       >
@@ -178,14 +188,6 @@ export function OpportunityMap({
           </Marker>
         ))}
       </MapContainer>
-
-      {filteredOpportunities.length === 0 && (
-        <div className="absolute inset-0 flex items-center justify-center bg-background/80 backdrop-blur-sm rounded-lg z-10">
-          <div className="text-center">
-            <p className="text-muted-foreground">No opportunities found for the selected filters.</p>
-          </div>
-        </div>
-      )}
     </div>
   )
 }
