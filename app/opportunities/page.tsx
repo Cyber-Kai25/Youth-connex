@@ -12,7 +12,6 @@ export default function OpportunitiesPage() {
   const [loading, setLoading] = useState(true)
   const [selectedCategory, setSelectedCategory] = useState('All')
   const [searchTerm, setSearchTerm] = useState('')
-  const supabase = createClient()
 
   const categories = ['All', 'Agriculture', 'Tech', 'Training', 'Local Jobs', 'Construction', 'Healthcare', 'Services']
 
@@ -26,6 +25,15 @@ export default function OpportunitiesPage() {
 
   async function fetchOpportunities() {
     try {
+      if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+        console.error('Supabase environment variables are not configured')
+        setOpportunities([])
+        setLoading(false)
+        return
+      }
+
+      const supabase = createClient()
+
       let query = supabase
         .from('opportunities')
         .select('*')

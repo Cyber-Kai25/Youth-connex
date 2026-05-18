@@ -15,7 +15,6 @@ export default function OpportunityDetailsPage() {
   const [isSaved, setIsSaved] = useState(false)
   const [hasApplied, setHasApplied] = useState(false)
   const [user, setUser] = useState<any>(null)
-  const supabase = createClient()
 
   useEffect(() => {
     fetchData()
@@ -23,6 +22,14 @@ export default function OpportunityDetailsPage() {
 
   async function fetchData() {
     try {
+      if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+        console.error('Supabase environment variables are not configured')
+        setLoading(false)
+        return
+      }
+
+      const supabase = createClient()
+
       const { data: { user } } = await supabase.auth.getUser()
       setUser(user)
 
@@ -68,6 +75,13 @@ export default function OpportunityDetailsPage() {
     }
 
     try {
+      if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+        alert('Service not configured')
+        return
+      }
+
+      const supabase = createClient()
+
       const { error } = await supabase
         .from('applications')
         .insert({
@@ -93,6 +107,12 @@ export default function OpportunityDetailsPage() {
     }
 
     try {
+      if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+        return
+      }
+
+      const supabase = createClient()
+
       if (isSaved) {
         const { error } = await supabase
           .from('saved_opportunities')
