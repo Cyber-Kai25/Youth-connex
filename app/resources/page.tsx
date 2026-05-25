@@ -38,20 +38,20 @@ export default function ResourcesPage() {
     <main className="min-h-screen bg-background">
       <Navbar isDashboard={true} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground font-heading">Learning & Resources</h1>
+        <div className="text-center mb-8 sm:mb-12">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground font-heading">Learning & Resources</h1>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
             Everything you need to succeed in your career journey. From training programs to job search tips.
           </p>
         </div>
 
         {/* Resource Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {resources.map((resource, idx) => (
-            <div key={idx} className="bg-card rounded-lg border border-border p-8 hover:border-primary/30 hover:shadow-lg transition-all">
-              <div className="text-5xl mb-4">{resource.icon}</div>
+            <div key={idx} className="bg-card rounded-lg border border-border p-5 sm:p-8 hover:border-primary/30 hover:shadow-lg transition-all">
+              <div className="text-4xl sm:text-5xl mb-3 sm:mb-4">{resource.icon}</div>
               <h3 className="text-xl font-bold text-foreground mb-2 font-heading">{resource.title}</h3>
               <p className="text-muted-foreground mb-6">{resource.desc}</p>
               <ul className="space-y-2 mb-6">
@@ -69,7 +69,7 @@ export default function ResourcesPage() {
         </div>
 
         {/* Featured Training */}
-        <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg border border-border p-8 md:p-12 mb-12">
+        <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg border border-border p-5 sm:p-8 md:p-12 mb-8 sm:mb-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4 font-heading">
@@ -152,8 +152,8 @@ export default function ResourcesPage() {
         </div>
 
         {/* CTA */}
-        <div className="bg-primary text-primary-foreground rounded-lg p-8 md:p-12 text-center">
-          <h2 className="text-2xl font-bold mb-4 font-heading">Still have questions?</h2>
+        <div className="bg-primary text-primary-foreground rounded-lg p-6 sm:p-8 md:p-12 text-center">
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 font-heading">Still have questions?</h2>
           <p className="mb-6 text-primary-foreground/90 max-w-2xl mx-auto">
             Our support team is here to help. Reach out anytime and we&apos;ll get back to you within 24 hours.
           </p>

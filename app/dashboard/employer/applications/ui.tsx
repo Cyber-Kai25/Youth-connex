@@ -60,7 +60,7 @@ export function ApplicationsReview({ rows }: { rows: Row[] }) {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-foreground font-heading">Applications</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold text-foreground font-heading">Applications</h1>
         <p className="text-muted-foreground mt-1">Review and update applications to your opportunities</p>
       </div>
 
@@ -79,7 +79,7 @@ export function ApplicationsReview({ rows }: { rows: Row[] }) {
 
               <div className="divide-y divide-border">
                 {oppRows.map(row => (
-                  <div key={row.id} className="p-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                  <div key={row.id} className="p-3 sm:p-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3 sm:gap-4">
                     <div className="min-w-0">
                       <div className="font-semibold text-foreground">
                         {row.applicant?.full_name ?? 'Applicant'}
@@ -93,7 +93,7 @@ export function ApplicationsReview({ rows }: { rows: Row[] }) {
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-2 flex-wrap">
+                    <div className="flex items-center gap-2 flex-wrap w-full md:w-auto">
                       <span className="text-xs font-semibold px-2 py-1 rounded-full bg-primary/10 text-primary">
                         {row.status}
                       </span>

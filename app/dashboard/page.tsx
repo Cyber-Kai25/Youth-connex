@@ -43,10 +43,10 @@ export default async function DashboardPage() {
     <main className="min-h-screen bg-background">
       <Navbar isDashboard={true} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8">
         {/* Welcome Section */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-foreground font-heading">
+        <div className="mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl font-bold text-foreground font-heading">
             Welcome back, {profile?.full_name?.split(' ')[0] || 'User'}!
           </h1>
           <p className="text-muted-foreground mt-1">
@@ -55,7 +55,7 @@ export default async function DashboardPage() {
         </div>
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
           <div className="p-6 bg-card rounded-lg border border-border">
             <div className="flex items-start justify-between">
               <div>
@@ -98,14 +98,14 @@ export default async function DashboardPage() {
 
         {profile?.user_type === 'employer' && (
           <div className="mb-10">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-foreground font-heading">Employer Tools</h2>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+              <h2 className="text-xl sm:text-2xl font-bold text-foreground font-heading">Employer Tools</h2>
               <Link href="/dashboard/employer/opportunities/new">
-                <Button className="bg-primary hover:bg-primary/90">Create Opportunity</Button>
+                <Button className="bg-primary hover:bg-primary/90 w-full sm:w-auto">Create Opportunity</Button>
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <div className="p-6 bg-card rounded-lg border border-border">
                 <h3 className="font-semibold text-foreground mb-2">Manage Opportunities</h3>
                 <p className="text-sm text-muted-foreground mb-4">
@@ -131,8 +131,8 @@ export default async function DashboardPage() {
 
         {/* Recommended Opportunities */}
         <div>
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-foreground font-heading">Recommended for You</h2>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+            <h2 className="text-xl sm:text-2xl font-bold text-foreground font-heading">Recommended for You</h2>
             <Link href="/opportunities">
               <Button variant="ghost" className="text-primary hover:bg-primary/10">
                 View All →
@@ -141,7 +141,7 @@ export default async function DashboardPage() {
           </div>
 
           {opportunities && opportunities.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               {opportunities.map((opp: any) => (
                 <div key={opp.id} className="bg-card rounded-lg border border-border hover:border-primary/30 overflow-hidden hover:shadow-lg transition-all">
                   {opp.image_url && (

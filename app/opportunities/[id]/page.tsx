@@ -167,7 +167,7 @@ export default function OpportunityDetailsPage() {
     <main className="min-h-screen bg-background">
       <Navbar isDashboard={true} />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8">
         {/* Back Button */}
         <Link href="/opportunities" className="inline-flex items-center gap-2 text-primary hover:underline mb-6">
           ← Back to Opportunities
@@ -175,7 +175,7 @@ export default function OpportunityDetailsPage() {
 
         {/* Hero Image */}
         {opportunity.image_url && (
-          <div className="h-72 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg mb-8 overflow-hidden flex items-center justify-center">
+          <div className="h-48 sm:h-72 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg mb-6 sm:mb-8 overflow-hidden flex items-center justify-center">
             <img
               src={opportunity.image_url}
               alt={opportunity.title}
@@ -197,12 +197,12 @@ export default function OpportunityDetailsPage() {
                   {opportunity.duration}
                 </span>
               </div>
-              <h1 className="text-4xl font-bold text-foreground mb-2 font-heading">{opportunity.title}</h1>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2 font-heading">{opportunity.title}</h1>
               <p className="text-lg text-muted-foreground">By {opportunity.employer_name}</p>
             </div>
 
             {/* Quick Info */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 p-6 bg-card rounded-lg border border-border">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8 p-4 sm:p-6 bg-card rounded-lg border border-border">
               <div>
                 <p className="text-xs text-muted-foreground font-medium mb-1">Location</p>
                 <p className="font-semibold text-foreground">{opportunity.location}</p>
@@ -250,7 +250,7 @@ export default function OpportunityDetailsPage() {
 
           {/* Sidebar */}
           <div className="lg:col-span-1">
-            <div className="sticky top-24 bg-card rounded-lg border border-border p-6 space-y-4">
+            <div className="sticky top-20 sm:top-24 bg-card rounded-lg border border-border p-4 sm:p-6 space-y-4">
               <div className="flex items-center justify-between">
                 <h3 className="font-semibold text-foreground font-heading">Ready?</h3>
                 <button

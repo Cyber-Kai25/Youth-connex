@@ -88,9 +88,9 @@ export function NewOpportunityForm() {
   }
 
   return (
-    <div className="bg-card border border-border rounded-lg p-6">
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold text-foreground font-heading">Create Opportunity</h1>
+    <div className="bg-card border border-border rounded-lg p-4 sm:p-6">
+      <div className="mb-4 sm:mb-6">
+        <h1 className="text-xl sm:text-2xl font-bold text-foreground font-heading">Create Opportunity</h1>
         <p className="text-muted-foreground mt-1">Publish a new opportunity for job seekers</p>
       </div>
 
@@ -255,7 +255,7 @@ export function NewOpportunityForm() {
 
         {error && <p className="text-sm text-destructive">{error}</p>}
 
-        <div className="flex items-center gap-3">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
           <Button
             type="submit"
             className="bg-primary hover:bg-primary/90"

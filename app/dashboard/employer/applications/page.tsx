@@ -51,7 +51,7 @@ export default async function EmployerApplicationsPage() {
   return (
     <main className="min-h-screen bg-background">
       <Navbar isDashboard={true} />
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8">
         <ApplicationsReview rows={rows} />
       </div>
     </main>

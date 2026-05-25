@@ -8,19 +8,19 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-[600px] bg-gradient-to-br from-primary/5 via-background to-background pt-12 pb-24">
+      <section className="relative min-h-[calc(100svh-60px)] sm:min-h-[600px] bg-gradient-to-br from-primary/5 via-background to-background pt-8 sm:pt-12 pb-16 sm:pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center pt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center pt-6 sm:pt-12">
             <div className="flex flex-col gap-6">
               <div>
                 <div className="inline-block px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-semibold mb-4">
                   National Youth Portal
                 </div>
-                <h1 className="text-4xl md:text-5xl font-bold text-foreground font-heading leading-tight text-balance">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground font-heading leading-tight text-balance">
                   Empowering Cameroon&apos;s Next Generation
                 </h1>
               </div>
-              <p className="text-lg text-muted-foreground max-w-lg text-balance">
+              <p className="text-base sm:text-lg text-muted-foreground max-w-lg text-balance">
                 Connect with verified job opportunities, agricultural projects, and vocational training designed to accelerate your career in your home region.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
@@ -30,18 +30,18 @@ export default function Home() {
                   </Button>
                 </Link>
               </div>
-              <div className="grid grid-cols-3 gap-4 pt-4">
+              <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-4">
                 <div>
-                  <div className="text-2xl font-bold text-primary font-heading">45k+</div>
-                  <div className="text-sm text-muted-foreground">Registered Youth</div>
+                  <div className="text-xl sm:text-2xl font-bold text-primary font-heading">45k+</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Registered Youth</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-primary font-heading">1.2k+</div>
-                  <div className="text-sm text-muted-foreground">Active Projects</div>
+                  <div className="text-xl sm:text-2xl font-bold text-primary font-heading">1.2k+</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Active Projects</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-primary font-heading">10</div>
-                  <div className="text-sm text-muted-foreground">Regions Covered</div>
+                  <div className="text-xl sm:text-2xl font-bold text-primary font-heading">10</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Regions Covered</div>
                 </div>
               </div>
             </div>
@@ -68,7 +68,7 @@ export default function Home() {
               Four simple steps to connect with opportunities and advance your career
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             {[
               { step: 1, title: 'Register Profile', desc: 'Create your profile with your skills and interests' },
               { step: 2, title: 'Browse Map', desc: 'Explore opportunities physically located in your region' },
@@ -96,7 +96,7 @@ export default function Home() {
               Discover various categories of opportunities available across Cameroon
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {[
               { icon: '🌾', title: 'Agricultural Hubs', desc: 'Commercial farming & agribusiness projects', count: '140 Openings' },
               { icon: '💻', title: 'Tech Centers', desc: 'Software engineering & data roles', count: '89 Openings' },
@@ -121,8 +121,8 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-heading">Ready to Start Your Journey?</h2>
-          <p className="text-lg mb-8 text-primary-foreground/90 max-w-2xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 font-heading">Ready to Start Your Journey?</h2>
+          <p className="text-base sm:text-lg mb-6 sm:mb-8 text-primary-foreground/90 max-w-2xl mx-auto">
             Join thousands of Cameroonian youth who are building their futures through YouthConnex. Registration takes less than 5 minutes.
           </p>
           <Link href="/auth/sign-up">
@@ -136,7 +136,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-background border-t border-border py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-8">
             <div>
               <h3 className="font-bold text-foreground mb-4 font-heading">YouthConnex</h3>
               <p className="text-sm text-muted-foreground">

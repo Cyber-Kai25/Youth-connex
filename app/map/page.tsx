@@ -97,7 +97,7 @@ export default function MapPage() {
     <div className="min-h-screen bg-background">
       <Navbar isDashboard={false} />
 
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-4 sm:py-8">
         <div className="space-y-6">
           {/* Header */}
           <div className="space-y-2">
@@ -112,7 +112,7 @@ export default function MapPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 003 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6 -3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 17.618V6.382a1 1 0 00-1.447-.894L15 8m0 13V8m0 0L9 5" />
                 </svg>
               </div>
-              <h1 className="text-3xl font-bold text-foreground">Opportunity Map</h1>
+              <h1 className="text-2xl sm:text-3xl font-bold text-foreground">Opportunity Map</h1>
             </div>
             <p className="text-muted-foreground">Find roles near you across Cameroon</p>
           </div>
@@ -182,7 +182,7 @@ export default function MapPage() {
 
           {/* Map */}
           {loading ? (
-            <div className="w-full h-96 bg-muted rounded-lg flex items-center justify-center">
+            <div className="w-full h-[50vh] sm:h-[60vh] md:h-96 bg-muted rounded-lg flex items-center justify-center">
               <div className="text-center">
                 <div className="animate-spin w-8 h-8 border-4 border-primary border-t-transparent rounded-full mx-auto mb-3"></div>
                 <p className="text-muted-foreground">Loading map...</p>
@@ -200,7 +200,7 @@ export default function MapPage() {
           {/* Legend */}
           <div className="bg-card border border-border rounded-lg p-4 space-y-3">
             <h3 className="font-semibold text-foreground">Legend</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-3">
               {CATEGORIES.map(category => {
                 const categoryColors: Record<string, string> = {
                   'Agriculture': 'bg-[#2D7A4E]',
