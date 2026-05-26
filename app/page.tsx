@@ -46,13 +46,8 @@ export default function Home() {
               </div>
             </div>
             <div className="hidden md:flex items-center justify-center">
-              <div className="relative w-full h-96 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl border border-border/50 flex items-center justify-center">
-                <div className="text-center">
-                  <svg className="w-24 h-24 text-primary mx-auto opacity-30" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                  </svg>
-                  <p className="text-muted-foreground mt-4">Your pathway to opportunity starts here</p>
-                </div>
+              <div className="relative w-full h-75 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl border border-border/50 flex items-center justify-center">
+                <img src="/big.png" alt="YouthConnex Logo" className="w-480 h-700 object-contain" />
               </div>
             </div>
           </div>
