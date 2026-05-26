@@ -27,7 +27,7 @@ export default async function EmployerApplicationsPage() {
   const { data: applications } = await supabase
     .from('applications')
     .select(
-      'id, status, application_date, updated_at, user_id, opportunity_id, opportunities!inner(id, title, employer_id)'
+      'id, status, application_date, updated_at, user_id, opportunity_id, cv_url, opportunities!inner(id, title, employer_id)'
     )
     .eq('opportunities.employer_id', user.id)
     .order('application_date', { ascending: false })

@@ -1,6 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import { Navbar } from '@/components/navbar'
 import { Button } from '@/components/ui/button'
+import { CvUpload } from '@/components/cv-upload'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
 
@@ -95,6 +96,12 @@ export default async function DashboardPage() {
             </div>
           </div>
         </div>
+
+        {profile?.user_type === 'youth' && (
+          <div className="mb-6 sm:mb-8">
+            <CvUpload currentCvUrl={profile?.cv_url ?? null} />
+          </div>
+        )}
 
         {profile?.user_type === 'employer' && (
           <div className="mb-10">

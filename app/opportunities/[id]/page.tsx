@@ -82,18 +82,26 @@ export default function OpportunityDetailsPage() {
 
       const supabase = createClient()
 
+      // Fetch user's CV URL from their profile to attach with the application
+      const { data: profile } = await supabase
+        .from('profiles')
+        .select('cv_url')
+        .eq('id', user.id)
+        .single()
+
       const { error } = await supabase
         .from('applications')
         .insert({
           opportunity_id: opportunityId,
           user_id: user.id,
           status: 'pending',
+          cv_url: profile?.cv_url || null,
         })
 
       if (error) throw error
 
       setHasApplied(true)
-      alert('Application submitted successfully!')
+      alert('Application submitted successfully!' + (profile?.cv_url ? ' Your CV was included.' : ' Tip: Upload a CV on your dashboard to include it with future applications.'))
     } catch (error) {
       console.error('Error applying:', error)
       alert('Failed to submit application')
